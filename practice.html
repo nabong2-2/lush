@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 시 배경 고정 후 해제</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+
+        /* 🟢 고정된 배경과 섹션 */
+        .fixed-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(../images/01.jpg)no-repeat center center / cover;
+            z-index: 10;
+        }
+
+        .motion-wrap {
+            text-align: center;
+        }
+
+        .motion-cont {
+            font-size: 3rem;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            color: white;
+        }
+
+        /* 🔽 스크롤이 끝난 후 배경을 해제 */
+        .spacer {
+            height: 150vh; /* 스크롤 테스트를 위한 공간 */
+            background: #f3f3f3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🟢 배경과 컨텐츠가 고정된 섹션 -->
+    <div class="fixed-section">
+        <div class="motion-wrap">
+            <div class="motion-cont first">스크롤하면 색이 변해요! 🎨</div>
+        </div>
+    </div>
+
+    <!-- 🔽 애니메이션이 끝난 후 배경 해제 -->
+    <div class="spacer"></div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 텍스트 색상 변경 애니메이션
+        gsap.to(".motion-cont", {
+            color: "#ff5733", // 변할 색상 (주황색)
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".spacer", // 스크롤 트리거 기준점
+                start: "top 60%",  // 스크롤이 여기 도달하면 시작
+                end: "top 10%",    // 끝나는 지점
+                scrub: 1,          // 부드럽게 변화
+            }
+        });
+
+        // 🟢 요소 애니메이션이 끝나면 고정 해제 (배경과 컨텐츠 해제)
+        ScrollTrigger.create({
+            trigger: ".spacer",
+            start: "top 30%",
+            end: "top 10%",
+            onEnter: () => {
+                document.querySelector(".fixed-section").style.position = "relative";
+            },
+            onLeaveBack: () => {
+                document.querySelector(".fixed-section").style.position = "fixed";
+            }
+        });
+    </script>
+
+</body>
+</html>

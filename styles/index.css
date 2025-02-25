@@ -1,0 +1,283 @@
+body {
+    background-color: #F9F9F9;
+}
+header {
+    background-color: #fff;
+    padding: 0 80px;
+    display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;
+    height: 70px; z-index: 999;
+    position: fixed; width: 100%;
+}
+header h1 a {}
+header h1 a img {}
+header nav {
+    position: absolute; left: 50%; transform: translateX(-50%);
+}
+header nav a {margin-right: 60px;}
+header nav a:last-child {margin-right: 0;}
+header > a {
+    padding: 6px 7px; border-radius: 15px;
+    border: 1px solid #222;
+}
+header > a img {margin-left: 2px;}
+/* main */
+/* 공통 */
+.container {
+    width: 100%; margin-bottom: 100px;
+}
+.container .contents {
+    max-width: 1600px; margin: 0 auto;
+}
+/*1.배경 개별 */
+.container_bg {
+    padding: 180px 0 200px;
+    background: url(../images/main_bg.jpg);
+    background-size: cover;
+    height: 105vh;
+    background-attachment: fixed;
+}
+.container_bg * {color: #fff;}
+.container_bg .contents {
+    /* position: fixed; width: 100%;
+    left: 50%; transform: translateX(-50%); */
+    display: flex; flex-flow: column nowrap; justify-content: space-between;
+}
+.container_bg .contents .rush_bigtxt {
+    margin-bottom: 247px; 
+    font-size: 220px; font-weight: 900;
+}
+.container_bg .contents .bottom_box {
+    display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-end;
+}
+.container_bg .contents .bottom_box .left_info_box {}
+.container_bg .contents .bottom_box .left_info_box .short_txt {
+    display: flex; flex-flow: column nowrap; 
+    margin-bottom: 41px;
+}
+.container_bg .contents .bottom_box .left_info_box .short_txt span {
+    margin-bottom: 35px;
+    font-size: 30px; font-weight: 900;
+}
+.container_bg .contents .bottom_box .left_info_box .short_txt span:last-child {margin-bottom: 0;}
+.container_bg .contents .bottom_box .left_info_box .long_txt {
+    font-size: 25px;
+}
+.container_bg .contents .bottom_box .right_app_box {
+    display: flex; flex-flow: column nowrap; align-items: flex-end;
+}
+.container_bg .contents .bottom_box .right_app_box .app_info {
+    margin-bottom: 17px;
+}
+.container_bg .contents .bottom_box .right_app_box .btn_app {display: flex;}
+.container_bg .contents .bottom_box .right_app_box .btn_app a {
+    display: flex; align-items: center;
+    justify-content: center;
+    line-height: 70px; width: 237px;
+    border: 2px solid #fff; border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-right: 26px;
+    font-size: 25px; font-weight: 700;
+}
+.container_bg .contents .bottom_box .right_app_box .btn_app .google {
+    margin: 0;
+    background-color: #fff;  color: #222;
+    border: transparent;
+}
+.container_bg .contents .bottom_box .right_app_box .btn_app a img {margin-left: 8px;}
+/* 2. 러쉬 브랜드 소개 */
+main .container_about {
+    /* background-color:yellow; */
+    padding: 100px 0;
+    position: relative;
+}
+main .container_about::before {
+    display: block;  content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; 
+    background: url(../images/bubble_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+main .container_about .contents {
+    /* background-color: silver; */
+    position: relative;
+    z-index: 899;
+}
+main .container_about .contents::before {
+    display: block;  content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; 
+    background: url(.);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main .container_about .contents .top_title {
+    margin-bottom: 100px;
+}
+main .container_about .contents .top_title h2 {
+    margin-bottom: 25px;
+    opacity: 0;
+    font-size: 55px; font-weight: 900;
+}
+main .container_about .contents .top_title h2+p {
+    opacity: 0;
+    font-size: 19px; font-weight: 500; line-height: 1.5;
+}
+/* ---------------------------------category */
+main .container_about .contents .about_category {
+    background-color: salmon;
+    position: absolute; left: 50%; top: 40%; transform: translateX(-50%); z-index: 998;
+}
+main .container_about .contents .about_category li {margin-bottom: 65px;}
+main .container_about .contents .about_category li:last-child {margin-bottom: 0;}
+main .container_about .contents .about_category li a {
+    background: linear-gradient(to left, transparent 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    display: block;
+    text-align: center;
+    font-size: 47px; font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #222;
+    -webkit-background-clip: text;
+    transition: background-position 0.5s ease-out;
+}
+main .container_about .contents .about_category li:hover a {
+    background-position: left;
+}
+main .container_about .contents .about_category li .black {
+    -webkit-text-fill-color: #222;
+    background: none;
+}
+/* 버블 */
+main .container_about .contents .bubble_wrap {
+    background-color: aqua;
+    position: absolute; left: 50%; top: 20%; transform: translateX(-50%); z-index: 997;
+    width: calc(100% / 3); height: calc(100% / 2);
+}
+main .container_about .contents .bubble_wrap img {
+    position: absolute;
+}
+main .container_about .contents .bubble_wrap .top_left {
+    top: 0; left: 5px;
+}
+main .container_about .contents .bubble_wrap .bottom_left {
+    bottom: 5px; left: 25px;
+}
+main .container_about .contents .bubble_wrap .top_right {
+    top: 10px; right: 35px;
+}
+main .container_about .contents .bubble_wrap .bottom_right {
+    bottom: 160px; right: 10px;
+}
+/* 이미지+ 텍스트 공통 */
+main .container_about .contents .bottom_ani_box .left_box_ani > * ,
+main .container_about .contents .bottom_ani_box .right_box_ani > * {
+    width: 315px; 
+}
+main .container_about .contents  .image {
+    margin-bottom: 25px;
+}
+main .container_about .contents .image img {
+    border-radius: 50%; overflow: hidden;
+    width: 315px; height: 315px;
+}
+/* 공통 */
+main .container_about .contents .bottom_ani_box {
+    background-color: lavenderblush;
+    position: relative;
+    display: flex; justify-content: space-between;
+    height: 1055px;
+    opacity: 0;
+}
+main .container_about .contents .bottom_ani_box .left_box_ani {}
+/* 왼쪽 위 -1 */
+main .container_about .contents .bottom_ani_box .left_box_ani .left_top {
+    position: absolute; top: 4px; left: 212px;
+}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image img {
+}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image+p {}
+/* 왼쪽 아래 -2 */
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom {
+    position: absolute; bottom: 126px; left: 136px;
+}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom image {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom image img {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom image+p {}
+
+main .container_about .contents .bottom_ani_box .right_box_ani {
+}
+/* 오른쪽 위 - 3 */
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top {
+    position: absolute; top: 114px; right: 172px;
+}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top image {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top image img {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top image+p {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top image+p {}
+/* 오른쪽 아래 - 4 */
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom {
+    position: absolute; bottom: 29px; right: 217px;
+}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image img {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image+p {}
+/* ======================2. history */
+main .container_about .contents .ani_box2 {
+    background-color: pink;
+    display: none;
+    opacity: 0;
+}
+/* ======================3. values */
+main .container_about .contents .ani_box3 {
+    background-color:greenyellow;
+    display: none;
+}
+/* ======================4. politics */
+main .container_about .contents .ani_box4 {
+    background-color:sandybrown;
+    display: none;
+}
+/* 개별 - 위치랑 텍스트 위치?  */
+/* 일단 위치부터~! */
+/* 왼쪽 위 -1 */
+main .container_about .contents .ani_box2 .left_box_ani .left_top,
+main .container_about .contents .ani_box4 .left_box_ani .left_top {
+    position: absolute; top:195px; left: 165px;
+}
+/* 왼쪽 아래 -2 */
+main .container_about .contents .ani_box2 .left_box_ani .left_bottom,
+main .container_about .contents .ani_box4 .left_box_ani .left_bottom {
+    position: absolute; bottom: 69px; left: 200px;
+}
+/* 오른쪽 위 - 3 */
+main .container_about .contents .ani_box2 .right_box_ani .right_top,
+main .container_about .contents .ani_box4 .right_box_ani .right_top {
+    position: absolute; top: 0; right: 210px;
+}
+/* 오른쪽 아래 - 4 */
+main .container_about .contents .ani_box2 .right_box_ani .right_bottom,
+main .container_about .contents .ani_box4 .right_box_ani .right_bottom {
+    position: absolute; bottom: 128px; right: 114px;
+}
+/* 버블- 2/4 */
+main .container_about .contents .ani_box2 .bubble_wrap .top_left {
+    top: 5px; left: 30px;
+}
+main .container_about .contents .ani_box2 .bubble_wrap .bottom_left {
+    bottom: 180px; left: 5px;
+}
+main .container_about .contents .ani_box2 .bubble_wrap .top_right {
+    top: 10px; right: 75px;
+}
+main .container_about .contents .ani_box2 .bubble_wrap .bottom_right {
+    bottom: 25px; right: 25px;
+}
+
+/* 3. 보고서 */
+main .container_report {
+    background: url(../images/report_bg.jpg);
+    background-repeat: no-repeat;
+    width: 100%; height: 460px;
+}
+/* 
+https://www.designkits.co.kr/blog/web-css/text/GSAP-SCROLL-EFFECT */
