@@ -122,7 +122,6 @@ main .container_about .contents .top_title h2+p {
 }
 /* ---------------------------------category */
 main .container_about .contents .about_category {
-    background-color: salmon;
     position: absolute; left: 50%; top: 40%; transform: translateX(-50%); z-index: 998;
 }
 main .container_about .contents .about_category li {margin-bottom: 65px;}
@@ -148,7 +147,6 @@ main .container_about .contents .about_category li .black {
 }
 /* 버블 */
 main .container_about .contents .bubble_wrap {
-    background-color: aqua;
     position: absolute; left: 50%; top: 20%; transform: translateX(-50%); z-index: 997;
     width: calc(100% / 3); height: calc(100% / 2);
 }
@@ -179,9 +177,8 @@ main .container_about .contents .image img {
     border-radius: 50%; overflow: hidden;
     width: 315px; height: 315px;
 }
-/* 공통 */
+/* ================================ 공통 */
 main .container_about .contents .bottom_ani_box {
-    background-color: lavenderblush;
     position: relative;
     display: flex; justify-content: space-between;
     height: 1055px;
@@ -190,7 +187,7 @@ main .container_about .contents .bottom_ani_box {
 main .container_about .contents .bottom_ani_box .left_box_ani {}
 /* 왼쪽 위 -1 */
 main .container_about .contents .bottom_ani_box .left_box_ani .left_top {
-    position: absolute; top: 4px; left: 212px;
+    position: absolute; top: 150px; left: 212px;
 }
 main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image {}
 main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image img {
@@ -208,7 +205,7 @@ main .container_about .contents .bottom_ani_box .right_box_ani {
 }
 /* 오른쪽 위 - 3 */
 main .container_about .contents .bottom_ani_box .right_box_ani .right_top {
-    position: absolute; top: 114px; right: 172px;
+    position: absolute; top: 34px; right: 172px;
 }
 main .container_about .contents .bottom_ani_box .right_box_ani .right_top image {}
 main .container_about .contents .bottom_ani_box .right_box_ani .right_top image img {}
@@ -216,25 +213,22 @@ main .container_about .contents .bottom_ani_box .right_box_ani .right_top image+
 main .container_about .contents .bottom_ani_box .right_box_ani .right_top image+p {}
 /* 오른쪽 아래 - 4 */
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom {
-    position: absolute; bottom: 29px; right: 217px;
+    position: absolute; bottom: 69px; right: 217px;
 }
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image {}
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image img {}
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image+p {}
 /* ======================2. history */
 main .container_about .contents .ani_box2 {
-    background-color: pink;
     display: none;
     opacity: 0;
 }
 /* ======================3. values */
 main .container_about .contents .ani_box3 {
-    background-color:greenyellow;
     display: none;
 }
 /* ======================4. politics */
 main .container_about .contents .ani_box4 {
-    background-color:sandybrown;
     display: none;
 }
 /* 개별 - 위치랑 텍스트 위치?  */
@@ -247,7 +241,7 @@ main .container_about .contents .ani_box4 .left_box_ani .left_top {
 /* 왼쪽 아래 -2 */
 main .container_about .contents .ani_box2 .left_box_ani .left_bottom,
 main .container_about .contents .ani_box4 .left_box_ani .left_bottom {
-    position: absolute; bottom: 69px; left: 200px;
+    position: absolute; bottom: 109px; left: 200px;
 }
 /* 오른쪽 위 - 3 */
 main .container_about .contents .ani_box2 .right_box_ani .right_top,
@@ -278,6 +272,360 @@ main .container_report {
     background: url(../images/report_bg.jpg);
     background-repeat: no-repeat;
     width: 100%; height: 460px;
+    display: flex; align-items: center;
 }
+main .container_report .contents {
+    max-width: 1600px; margin: 0 auto;
+    display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;
+    padding-right: 200px;
+}
+main .container_report .contents .report_left {
+    display: flex; flex-flow: row nowrap;
+    padding-right: 150px;
+}
+main .container_report .contents .report_left .left_box {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 320px;
+    padding: 40px 0; text-align: center;
+    border-radius: 45px;
+}
+main .container_report .contents .report_left .left_box > * {
+    margin-bottom: 25px; color: #fff;
+}
+main .container_report .contents .report_left .left_box:first-child {margin-right: 140px;}
+main .container_report .contents .report_left .left_box .top_box {}
+main .container_report .contents .report_left .left_box .top_box .title {margin-bottom: 20px;}
+main .container_report .contents .report_left .left_box .top_box .img {width: 100%;}
+main .container_report .contents .report_left .left_box .info_report {}
+main .container_report .contents .report_left .left_box .btn_report {
+    display: inline-block;
+    margin-bottom: 0; width: 115px; line-height: 35px;
+    color: #222; background-color: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+main .container_report .contents .report_left .left_box .btn_report:hover {
+    background-color: #222; color: #fff;
+}
+/* 오른쪽 */
+main .container_report .contents .report_right {}
+main .container_report .contents .report_right p {
+    color: #fff;
+}
+main .container_report .contents .report_right .cam_title {
+    margin-bottom: 35px;
+}
+main .container_report .contents .report_right .cam_info {}
+/* ================================================ 4. 제품 소개 */
+main .container_items {
+    height: 300vh;
+}
+main .container_items .contents_bg {
+    background: url(../images/natural_beauty2.png) no-repeat;
+    position: sticky; top: 20px; height: 65vh;
+    background-position-x: 100px;
+    background-position-y: -35px; 
+}
+main .container_items .contents {
+    z-index: 999; position: sticky;
+    top: 10vh;
+    /* width: 80%; height: 80%; */
+}
+main .container_items .contents .top_info_box {
+    display: flex; flex-flow: row nowrap; justify-content: flex-start;
+    margin-bottom: 60px;
+}
+main .container_items .contents .top_info_box .left_box {
+    margin-right: 200px;
+}
+main .container_items .contents .top_info_box .left_box .brand {
+    margin-bottom: 25px;
+    font-size: 37px; font-weight: 800;
+}
+main .container_items .contents .top_info_box .left_box .brand_info {
+    font-size: 19px; line-height: 1.5; 
+}
+main .container_items .contents .top_info_box .title_box {
+    overflow: hidden;
+}
+main .container_items .contents .top_info_box .title_box .title {
+    font-size: 37px; font-weight: 800;
+}
+/* a - 더 자세히 보기 */
+main .container_items .contents .top_info_box .title_box .btn_product {
+    border-radius: 30px; border: 1.4px solid #222;
+    padding: 10px 17px; display: inline-block;
+    float: right; margin-top: 20px;
+}
+/* 움직이는 컨텐츠 */
+/* 공통 */
+main .container_items .contents .move_contents {
+    /* background-color: lightgreen; */
+    position: relative;
+    display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;
+    /* height: 100vh; */
+    opacity: 0;
+}
+/* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆ 글자 */
+main .container_items .contents .move_contents .main_title {
+    position: absolute; left: 50%; top:0%; transform: translateX(-50%);
+    font-size: 230px; font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #000; z-index: 999;
+    -webkit-background-clip: text !important; 
+    /* opacity: 0; */
+    background: linear-gradient(to left, transparent 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    display: block; 
+    transition: background-position 2.5s ease-out;
+}
+main .container_items .contents .move_contents .img_left_box {
+}
+main .container_items .contents .move_contents .img_left_box > * {
+    width: 259px; height: 259px;
+    border-radius: 50%; overflow: hidden;
+}
+main .container_items .contents .move_contents .img_left_box .left1 {
+    position: absolute; bottom: 0; left: 50px;
+    opacity: 0;
+} 
+main .container_items .contents .move_contents .img_left_box .left1 img {width: 100%;}
+main .container_items .contents .move_contents .img_left_box .left2 {
+    position: absolute; /* bottom: 163px; left: 331px; */
+    opacity: 0; top: -100px; left: 331px;
+}
+main .container_items .contents .move_contents .img_left_box .left2 img {width: 100%;}
+main .container_items .contents .move_contents .img_right {
+    width: 533px; height: 533px;
+    border-radius: 50%; overflow: hidden;
+    position: relative; top: 100px;
+    opacity: 0;
+}
+main .container_items .contents .move_contents .img_right img {width: 100%; }
+/* bath */
+main .container_items .contents .move1 {}
+main .container_items .contents .move2 {opacity: 0;}
+/* shower */
+main .container_items .contents .move3 {opacity: 0;}
+/* body */
+/* ================================================5. 서비스 소개 */
+main .container_service {
+    padding: 80px 0 170px;
+}
+main .container_service .contents {}
+main .container_service .contents .title_box {
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+main .container_service .contents .title_box .title_service {
+    float: left;
+    font-size: 55px; font-weight: 900;
+}
+main .container_service .contents .title_box .title_sub {
+    float: right;
+}
+main .container_service .contents .title_box .title_sub .sub_title {
+    font-size: 33px; font-weight: 800;
+    margin-bottom: 10px;
+}
+main .container_service .contents .title_box .title_sub .info {
+    font-size: 19px;
+}
+/* 아래 컨텐츠 */
+main .container_service .contents .bottom_contents {
+    display: flex; flex-flow: row nowrap; justify-content: space-between;
+}
+main .container_service .contents .bottom_contents a {
+    width: 362px; height: 352px;
+    background-size: cover; border-radius: 45px;
+    overflow: hidden;
+    padding: 30px;
+    position: relative;
+    display: flex; flex-flow: column nowrap;
+}
+main .container_service .contents .bottom_contents a::after {
+    display: block; position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; content: '';
+    background: rgb(0, 0, 0, 0.5); z-index: 5;
+    transition: background 0.3s linear;
+}
+main .container_service .contents .bottom_contents a span {
+    color: #fff; z-index: 6; position: relative;
+    transition: color 0.5s ease-in-out;
+} 
+main .container_service .contents .bottom_contents a:hover span {
+    color: #000000;
+}
+main .container_service .contents .bottom_contents a:hover::after {
+    background: rgb(255, 255, 255, 0.1);
+}
+main .container_service .contents .bottom_contents a .title {
+    margin-bottom: 10px;
+    font-size: 25px; font-weight: 700;
+}
+main .container_service .contents .bottom_contents a .info {
+    font-size: 18px;
+}
+main .container_service .contents .bottom_contents .spa {
+    background: url(../images/spa1.jpg) no-repeat;
+    display: flex; justify-content: end;
+}
+main .container_service .contents .bottom_contents .vip {
+    background: url(../images/vip2.jpg) no-repeat;
+}
+main .container_service .contents .bottom_contents .vip,
+main .container_service .contents .bottom_contents .digital {
+    position: relative; top: 50px;
+}
+main .container_service .contents .bottom_contents .present {
+    background: url(../images/present2.jpg) no-repeat;
+    display: flex; justify-content: end;
+}
+main .container_service .contents .bottom_contents .digital {
+    background: url(../images/phone2.jpg) no-repeat;
+}
+/* =====================================6. 설문조사 */
+main .container_survey {
+    background: url(../images/survey.jpg) no-repeat;
+    background-size: cover;
+    height: 380px;
+    position: relative;
+    padding: 83px 0;
+    margin-bottom: 0;
+}
+main .container_survey::after {
+    display: block; position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; content: '';
+    background: rgb(0, 0, 0, 0.3); z-index: 5;
+}
+main .container_survey .contents {
+    position: relative; z-index: 6;
+    
+}
+main .container_survey .contents * {color: #fff;}
+main .container_survey .contents .top_box {
+    margin-bottom: 70px;
+}
+main .container_survey .contents .top_box .title {
+    margin-bottom: 40px;
+}
+main .container_survey .contents .top_box .main_title {
+    font-size: 38px; font-weight: 900;
+}
+main .container_survey .contents .survey {
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #fff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 161px; line-height: 50px;
+    transition: background-color 0.3s linear;
+}
+main .container_survey .contents .survey:hover {
+    background-color: #222; border: #222;
+}
+main .container_survey .contents .survey img {}
+
+/* ============================= footer */
+footer {
+    background-color: #222;
+    padding: 100px 0 50px;
+}
+footer * {
+    color: #fff;
+}
+footer .contents {
+    max-width: 1600px; margin: 0 auto;
+}
+footer .contents .top_contents {
+    margin-bottom: 60px;
+    display: flex; justify-content: space-between; flex-flow: row nowrap;
+    position: relative;
+}
+footer .contents .top_contents .left_info {
+    display: flex; justify-content: space-between; flex-flow: row nowrap;
+}
+footer .contents .top_contents .left_info .left_a_box {
+    margin-right: 40px;
+}
+/* 공통 */
+footer .contents .top_contents .left_info .text_box {
+    display: flex; flex-flow: column nowrap; margin-bottom: 25px;
+}
+footer .contents .top_contents .left_info .text_box:last-child {
+    margin-bottom: 0;
+}
+footer .contents .top_contents .left_info .text_box .title {
+    margin-bottom: 11px;
+    font-weight: 700;
+}
+footer .contents .top_contents .left_info .left_b_box .text_box .info {}
+/* 개별 */
+footer .contents .top_contents .left_info .left_b_box .text_box .info {}
+footer .contents .top_contents .left_info .left_b_box .text_box .info .talk_btn {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: 10px;
+    padding: 3px; 
+}
+footer .contents .top_contents .left_info .left_b_box .text_box .info .talk_btn img {width: 9px; height: 9px;}
+/* 가운데 앱 */
+footer .contents .top_contents .btn_wrap {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    display: flex; flex-flow: row nowrap;
+}
+footer .contents .top_contents .btn_wrap a {
+    width: 170px; height: 50px;
+    border: 1px solid #fff;
+    background-size: cover;
+}
+footer .contents .top_contents .btn_wrap .apple_store {
+    background: url(../images/btn_apple2.png) no-repeat;
+    margin-right: 10px;
+}
+footer .contents .top_contents .btn_wrap .googleplay {
+    background: url(../images/btn_google2.png) no-repeat;
+}
+/* 오른쪽 sns */
+footer .contents .top_contents {}
+footer .contents .top_contents .right_info {}
+footer .contents .top_contents .right_info .sns_box {
+    margin-bottom: 25px;
+}
+footer .contents .top_contents .right_info .sns_box > a {
+    margin-right: 7px;
+}
+footer .contents .top_contents .right_info .sns_box > a:last-child {margin-right: 0;}
+footer .contents .top_contents .right_info .sns_box > a img {}
+footer .contents .top_contents .right_info .politics {
+    display: flex; flex-flow: column nowrap;
+    text-align: right;
+}
+footer .contents .top_contents .right_info .politics > a {
+    margin-bottom: 20px; font-weight: 700;
+}
+footer .contents .top_contents .right_info .politics > a:last-child {
+    margin-bottom: 0;
+}
+/* 아래 */
+footer .contents .bottom_images {
+    display: flex; justify-content: space-between;
+    margin-bottom: 17px;
+}
+footer .contents .bottom_images img {}
+footer .contents > p {
+    font-weight: 900;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* 
 https://www.designkits.co.kr/blog/web-css/text/GSAP-SCROLL-EFFECT */
