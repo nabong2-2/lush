@@ -1,0 +1,38 @@
+/* 아래에서 위로 등장 (left1, img_right) */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 위에서 아래로 등장 (left2) */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 애니메이션 클래스 */
+.animate-up {
+    animation: slideUp 1s ease-out forwards;
+}
+
+.animate-down {
+    animation: slideDown 1s ease-out forwards;
+}
+
+/* 기본적으로 숨김 상태 */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}

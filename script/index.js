@@ -252,77 +252,188 @@ gsap.from('.right_top, .right_bottom',{
 })
 
 //===========================================================제품 소개
-gsap.to('.move_contents .main_title',{
-    scrollTrigger:{
-        trigger:'.move_contents .main_title',
-        start:'top 80%',
-        end:'top 20%',
-        // markers:true,
-        toggleActions:'play reverse restart reverse',
-        scrub:true,
-        onEnter: () => {
-            gsap.to('.move_contents .main_title',{
-                opacity: 1,
-                y: 50,
-                duration: 1,
-                stagger: 0.2, // ★ 순차적으로 등장 ★
-            });
-        },
-        onLeaveBack: () => {
-            gsap.to('.move_contents .main_title', {
+// gsap.to('.move_contents .main_title',{
+//     scrollTrigger:{
+//         trigger:'.move_contents .main_title',
+//         start:'top 80%',
+//         end:'top 20%',
+//         // markers:true,
+//         toggleActions:'play reverse restart reverse',
+//         scrub:true,
+//         onEnter: () => {
+//             gsap.to('.move_contents .main_title',{
+//                 opacity: 1,
+//                 y: 50,
+//                 duration: 1,
+//                 stagger: 0.2, // ★ 순차적으로 등장 ★
+//             });
+//         },
+//         onLeaveBack: () => {
+//             gsap.to('.move_contents .main_title', {
+//                 opacity: 0,
+//                 y: 0,
+//                 duration: 0.8,
+//                 stagger: 0.1, // ★ 사라질 때도 순차적으로 ★
+//             });
+//         },
+//     },
+//     opacity:1,
+// })
+
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const mainTitles = document.querySelectorAll(".move_contents .main_title");
+
+    mainTitles.forEach((title) => {
+        gsap.to(title, {
+            backgroundPosition: "0% 50%", // 🎯 애니메이션 목표 (완전히 색이 채워진 상태)
+            ease: "none", // 부드러운 스크롤 연동
+            scrollTrigger: {
+                trigger: title,
+                start: "top 80%",
+                end: "top 20%",
+                scrub: 1, // 🎯 스크롤 속도에 맞춰 자연스럽게 반응
+            },
+        });
+    });
+});
+
+
+
+
+
+
+// gsap.to('.img_left_box .left1',{
+//     scrollTrigger:{
+//         trigger:'.img_left_box .left1',
+//         start:'top 30%',
+//         end:'top 10%',
+//         // markers:true,
+//         toggleActions:'play reverse restart none',
+//         scrub:true,
+//     },
+//     // duration: 3,
+//     y:50,
+// })
+
+
+// gsap.utils.toArray(".img_left_box .left2").forEach((img) => {
+//     gsap.to(img,{
+//         scrollTrigger:{
+//             trigger:img,
+//             start:'top 80%',
+//             end:'top 20%',
+//             // markers:true,
+//             toggleActions:'play reverse restart reverse',
+//             scrub:true,
+//         },
+//         y:-30,
+//     })
+// })
+
+// gsap.utils.toArray(".move_contents .img_right").forEach((img) => {
+//     gsap.to(img, {
+//         scrollTrigger:{
+//             trigger:img,
+//             start:'top 80%',
+//             end:'top 20%',
+//             // markers:true,
+//             toggleActions:'play reverse restart reverse',
+//             scrub:true,
+//         },
+//         y:-400,
+//     })
+// })
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const moveContents = document.querySelectorAll('.move_contents');
+
+    function checkScroll() {
+        const scrollY = window.scrollY || window.pageYOffset; // 현재 스크롤 위치
+        const viewportHeight = window.innerHeight; // 브라우저 창 높이
+
+        moveContents.forEach((content, index) => {
+            const contentTop = content.getBoundingClientRect().top + scrollY; // 요소의 실제 위치
+            const contentHeight = content.offsetHeight;
+            const activationPoint = contentTop - viewportHeight + contentHeight / 2; // 씬이 절반 정도 올라오면 실행
+
+            if (scrollY >= activationPoint) {
+                activateAnimation(content);
+            }
+        });
+    }
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        gsap.registerPlugin(ScrollTrigger);
+    
+        const moveContents = document.querySelectorAll(".move_contents");
+    
+        moveContents.forEach((content, index) => {
+            gsap.to(content, {
                 opacity: 0,
-                y: 0,
-                duration: 0.8,
-                stagger: 0.1, // ★ 사라질 때도 순차적으로 ★
+                ease: "none",
+                scrollTrigger: {
+                    trigger: content,
+                    start: "top 10%", // 🎯 초반에는 유지
+                    end: "bottom top", // 🎯 150vh 지점에서 자연스럽게 사라짐
+                    scrub: true, // 🎯 부드러운 전환
+                    onComplete: () => {
+                        // 🎯 현재 씬이 사라지는 즉시 다음 씬을 활성화
+                        if (moveContents[index + 1]) {
+                            gsap.to(moveContents[index + 1], {
+                                opacity: 1,
+                                duration: 0.3, // 빠르게 다음 씬이 등장
+                                ease: "none",
+                            });
+                        }
+                    },
+                },
             });
-        },
-    },
-    opacity:1,
-    // y:200,
-})
+        });
+    });
+    
 
 
-gsap.to('.img_left_box .left1',{
-    scrollTrigger:{
-        trigger:'.img_left_box .left1',
-        start:'top 30%',
-        end:'top 10%',
-        // markers:true,
-        toggleActions:'play reverse restart none',
-        scrub:true,
-    },
-    // duration: 3,
-    y:50,
-})
 
 
-gsap.utils.toArray(".img_left_box .left2").forEach((img) => {
-    gsap.to(img,{
-        scrollTrigger:{
-            trigger:img,
-            start:'top 80%',
-            end:'top 20%',
-            // markers:true,
-            toggleActions:'play reverse restart reverse',
-            scrub:true,
-        },
-        y:-30,
-    })
-})
 
-gsap.utils.toArray(".move_contents .img_right").forEach((img) => {
-    gsap.to(img, {
-        scrollTrigger:{
-            trigger:img,
-            start:'top 80%',
-            end:'top 20%',
-            // markers:true,
-            toggleActions:'play reverse restart reverse',
-            scrub:true,
-        },
-        y:-400,
-    })
-})
+
+
+
+    function activateAnimation(content) {
+        const left1 = content.querySelector('.img_left_box .left1');
+        const left2 = content.querySelector('.img_left_box .left2');
+        const imgRight = content.querySelector('.move_contents .img_right');
+
+        if (left1) {
+            left1.classList.remove('hidden');
+            left1.classList.add('animate-down'); // 아래에서 위로 등장
+        }
+        if (left2) {
+            left2.classList.remove('hidden');
+            left2.classList.add('animate-up'); // 위에서 아래로 등장
+        }
+        if (imgRight) {
+            imgRight.classList.remove('hidden');
+            imgRight.classList.add('animate-down'); // 아래에서 위로 등장
+        }
+    }
+
+    // 요소 초기 숨김 상태 적용
+    moveContents.forEach((content) => {
+        content.querySelectorAll('.img_left_box .left1, .img_left_box .left2, .move_contents .img_right').forEach(el => {
+            el.classList.add('hidden');
+        });
+    });
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // 초기 로딩 시 확인
+});
+
 
 
 

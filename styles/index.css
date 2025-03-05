@@ -215,7 +215,7 @@ main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image+p
 }
 /* 왼쪽 아래 -2 */
 main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom {
-    position: absolute; bottom: 126px; left: 136px;
+    position: absolute; bottom: 66px; left: 136px;
 }
 main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom .image {}
 main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom .image img {}
@@ -237,7 +237,7 @@ main .container_about .contents .bottom_ani_box .right_box_ani .right_top .image
 }
 /* 오른쪽 아래 - 4 */
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom {
-    position: absolute; bottom: 100px; right: 147px;
+    position: absolute; bottom: 30px; right: 147px;
 }
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom .image {}
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom .image img {}
@@ -277,7 +277,7 @@ main .container_about .contents .ani_box4 .right_box_ani .right_top {
 /* 오른쪽 아래 - 4 */
 main .container_about .contents .ani_box2 .right_box_ani .right_bottom,
 main .container_about .contents .ani_box4 .right_box_ani .right_bottom {
-    position: absolute; bottom: 128px; right: 114px;
+    position: absolute; bottom: 78px; right: 114px;
 }
 /* 버블- 2/4 */
 main .container_about .contents .ani_box2 .bubble_wrap .top_left,
@@ -400,7 +400,7 @@ main .container_items .contents .top_info_box .title_box .btn_product {
 /* 공통 */
 main .container_items .contents .move_contents {
     /* background-color: lightgreen;  */
-    width: 100%; height: 150vh;
+    width: 100%; height: 120vh;
     position: relative;
     display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;
     /* height: 100vh; */
@@ -408,17 +408,17 @@ main .container_items .contents .move_contents {
 }
 /* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆ 글자 */
 main .container_items .contents .move_contents .main_title {
-    position: absolute; left: 50%; top:20%; transform: translateX(-50%);
+    position: absolute; left: 50%; top:40%; transform: translateX(-50%);
     font-size: 14.38rem; font-weight: 900;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #000; z-index: 999;
     -webkit-background-clip: text !important; 
-    /* opacity: 0; */
     background: linear-gradient(to left, transparent 50%, black 50%);
+    /* background: linear-gradient(to right, transparent 0%, black 100%); */
     background-size: 200% 100%;
-    background-position: right;
+    background-position: 100% 50%; /* 기본값: 색이 없음 (오른쪽 투명) */
     display: block; 
-    transition: background-position 2.5s ease-out;
+    transition: none;
 }
 main .container_items .contents .move_contents .img_left_box {
     height: 100vh; width: 1200px;
@@ -428,17 +428,17 @@ main .container_items .contents .move_contents .img_left_box > * {
     border-radius: 50%; overflow: hidden;
 }
 main .container_items .contents .move_contents .img_left_box .left1 {
-    position: absolute; top:300px; margin-left: 20px; 
+    position: absolute; top: 500px; left: 13px;
 } 
 main .container_items .contents .move_contents .img_left_box .left1 img {width: 100%;}
 main .container_items .contents .move_contents .img_left_box .left2 {
-    position: absolute; top: 310px; left: 312px;
+    position: absolute; top: 370px; left: 302px;
 }
 main .container_items .contents .move_contents .img_left_box .left2 img {width: 100%;}
 main .container_items .contents .move_contents .img_right {
     width: 603px; height: 603px;
     border-radius: 50%; overflow: hidden;
-    position: absolute; top: 500px; right: 10px;
+    position: absolute; top: 200px; right: 10px;
     /* opacity: 0; */
 }
 main .container_items .contents .move_contents .img_right img {width: 100%; }
