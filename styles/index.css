@@ -1,6 +1,9 @@
 body {
     background-color: #F9F9F9;
 }
+body * {
+    color: #222; letter-spacing: -0.02rem;
+}
 header {
     background-color: #fff;
     padding: 0 80px;
@@ -13,11 +16,18 @@ header h1 a img {}
 header nav {
     position: absolute; left: 50%; transform: translateX(-50%);
 }
-header nav a {margin-right: 60px;}
+header nav a {
+    margin-right: 65px;
+    font-size: 0.98rem; font-weight: 600;
+}
+header nav a:hover {
+    border-bottom: 1px solid #222;
+}
 header nav a:last-child {margin-right: 0;}
 header > a {
-    padding: 6px 7px; border-radius: 15px;
+    padding: 5px 7px; border-radius: 15px;
     border: 1px solid #222;
+    font-size: 0.75rem; 
 }
 header > a img {margin-left: 2px;}
 /* main */
@@ -44,7 +54,7 @@ header > a img {margin-left: 2px;}
 }
 .container_bg .contents .rush_bigtxt {
     margin-bottom: 247px; 
-    font-size: 220px; font-weight: 900;
+    font-size: 12.50rem; font-weight: 900;
 }
 .container_bg .contents .bottom_box {
     display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: flex-end;
@@ -56,27 +66,30 @@ header > a img {margin-left: 2px;}
 }
 .container_bg .contents .bottom_box .left_info_box .short_txt span {
     margin-bottom: 35px;
-    font-size: 30px; font-weight: 900;
+    font-size: 1.56rem; font-weight: 900;
+    font-family: 'Pretendard';
 }
 .container_bg .contents .bottom_box .left_info_box .short_txt span:last-child {margin-bottom: 0;}
 .container_bg .contents .bottom_box .left_info_box .long_txt {
-    font-size: 25px;
+    font-size: 1.25rem; font-weight: 700;
 }
 .container_bg .contents .bottom_box .right_app_box {
     display: flex; flex-flow: column nowrap; align-items: flex-end;
 }
 .container_bg .contents .bottom_box .right_app_box .app_info {
     margin-bottom: 17px;
+    font-size: 1.05rem; font-weight: 500; font-family: 'Pretendard';
 }
+/* 버튼 */
 .container_bg .contents .bottom_box .right_app_box .btn_app {display: flex;}
 .container_bg .contents .bottom_box .right_app_box .btn_app a {
     display: flex; align-items: center;
     justify-content: center;
-    line-height: 70px; width: 237px;
+    line-height: 65px; width: 217px;
     border: 2px solid #fff; border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    margin-right: 26px;
-    font-size: 25px; font-weight: 700;
+    margin-right: 35px;
+    font-size: 1.38rem; font-weight: 700;
 }
 .container_bg .contents .bottom_box .right_app_box .btn_app .google {
     margin: 0;
@@ -114,11 +127,13 @@ main .container_about .contents .top_title {
 main .container_about .contents .top_title h2 {
     margin-bottom: 25px;
     opacity: 0;
-    font-size: 55px; font-weight: 900;
+    font-size: 3.44rem; font-weight: 900;
+    font-family: 'Pretendard';
 }
 main .container_about .contents .top_title h2+p {
     opacity: 0;
-    font-size: 19px; font-weight: 500; line-height: 1.5;
+    font-size: 1.19rem; font-weight: 500; line-height: 1.5;
+    font-family: 'Pretendard';
 }
 /* ---------------------------------category */
 main .container_about .contents .about_category {
@@ -132,7 +147,7 @@ main .container_about .contents .about_category li a {
     background-position: right;
     display: block;
     text-align: center;
-    font-size: 47px; font-weight: 900;
+    font-size: 2.94rem; font-weight: 900;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px #222;
     -webkit-background-clip: text;
@@ -171,7 +186,7 @@ main .container_about .contents .bottom_ani_box .right_box_ani > * {
     width: 315px; 
 }
 main .container_about .contents  .image {
-    margin-bottom: 25px;
+    margin-bottom: 9px; 
 }
 main .container_about .contents .image img {
     border-radius: 50%; overflow: hidden;
@@ -181,43 +196,54 @@ main .container_about .contents .image img {
 main .container_about .contents .bottom_ani_box {
     position: relative;
     display: flex; justify-content: space-between;
-    height: 1055px;
-    opacity: 0;
+    height: 100vh;
 }
 main .container_about .contents .bottom_ani_box .left_box_ani {}
+main .container_about .contents .bottom_ani_box .txt {
+    font-size: 1.10rem; font-family: 'Pretendard'; line-height: 1.5;
+    font-weight: 600;
+}
 /* 왼쪽 위 -1 */
 main .container_about .contents .bottom_ani_box .left_box_ani .left_top {
-    position: absolute; top: 150px; left: 212px;
+    position: absolute; top: 35px; left: 212px;
 }
 main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image {}
 main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image img {
 }
-main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image+p {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_top .image+p {
+    text-align: left;
+}
 /* 왼쪽 아래 -2 */
 main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom {
     position: absolute; bottom: 126px; left: 136px;
 }
-main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom image {}
-main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom image img {}
-main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom image+p {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom .image {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom .image img {}
+main .container_about .contents .bottom_ani_box .left_box_ani .left_bottom .image+p {
+    text-align: left;
+}
 
 main .container_about .contents .bottom_ani_box .right_box_ani {
 }
 /* 오른쪽 위 - 3 */
 main .container_about .contents .bottom_ani_box .right_box_ani .right_top {
-    position: absolute; top: 34px; right: 172px;
+    position: absolute; top: 14px; right: 80px;
 }
-main .container_about .contents .bottom_ani_box .right_box_ani .right_top image {}
-main .container_about .contents .bottom_ani_box .right_box_ani .right_top image img {}
-main .container_about .contents .bottom_ani_box .right_box_ani .right_top image+p {}
-main .container_about .contents .bottom_ani_box .right_box_ani .right_top image+p {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top .image {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top .image img {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top .image+p {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_top .image+p {
+    text-align: right;
+}
 /* 오른쪽 아래 - 4 */
 main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom {
-    position: absolute; bottom: 69px; right: 217px;
+    position: absolute; bottom: 100px; right: 147px;
 }
-main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image {}
-main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image img {}
-main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom image+p {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom .image {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom .image img {}
+main .container_about .contents .bottom_ani_box .right_box_ani .right_bottom .image+p {
+    text-align: right;
+}
 /* ======================2. history */
 main .container_about .contents .ani_box2 {
     display: none;
@@ -236,17 +262,17 @@ main .container_about .contents .ani_box4 {
 /* 왼쪽 위 -1 */
 main .container_about .contents .ani_box2 .left_box_ani .left_top,
 main .container_about .contents .ani_box4 .left_box_ani .left_top {
-    position: absolute; top:195px; left: 165px;
+    position: absolute; top:135px; left: 145px;
 }
 /* 왼쪽 아래 -2 */
 main .container_about .contents .ani_box2 .left_box_ani .left_bottom,
 main .container_about .contents .ani_box4 .left_box_ani .left_bottom {
-    position: absolute; bottom: 109px; left: 200px;
+    position: absolute; bottom: 10px; left: 210px;
 }
 /* 오른쪽 위 - 3 */
 main .container_about .contents .ani_box2 .right_box_ani .right_top,
 main .container_about .contents .ani_box4 .right_box_ani .right_top {
-    position: absolute; top: 0; right: 210px;
+    position: absolute; top: -50px; right: 170px;
 }
 /* 오른쪽 아래 - 4 */
 main .container_about .contents .ani_box2 .right_box_ani .right_bottom,
@@ -254,16 +280,20 @@ main .container_about .contents .ani_box4 .right_box_ani .right_bottom {
     position: absolute; bottom: 128px; right: 114px;
 }
 /* 버블- 2/4 */
-main .container_about .contents .ani_box2 .bubble_wrap .top_left {
+main .container_about .contents .ani_box2 .bubble_wrap .top_left,
+main .container_about .contents .ani_box4 .bubble_wrap .top_left {
     top: 5px; left: 30px;
 }
-main .container_about .contents .ani_box2 .bubble_wrap .bottom_left {
+main .container_about .contents .ani_box2 .bubble_wrap .bottom_left,
+main .container_about .contents .ani_box4 .bubble_wrap .bottom_left {
     bottom: 180px; left: 5px;
 }
-main .container_about .contents .ani_box2 .bubble_wrap .top_right {
+main .container_about .contents .ani_box2 .bubble_wrap .top_right,
+main .container_about .contents .ani_box4 .bubble_wrap .top_right {
     top: 10px; right: 75px;
 }
-main .container_about .contents .ani_box2 .bubble_wrap .bottom_right {
+main .container_about .contents .ani_box2 .bubble_wrap .bottom_right,
+main .container_about .contents .ani_box4 .bubble_wrap .bottom_right {
     bottom: 25px; right: 25px;
 }
 
@@ -294,15 +324,19 @@ main .container_report .contents .report_left .left_box > * {
 }
 main .container_report .contents .report_left .left_box:first-child {margin-right: 140px;}
 main .container_report .contents .report_left .left_box .top_box {}
-main .container_report .contents .report_left .left_box .top_box .title {margin-bottom: 20px;}
+main .container_report .contents .report_left .left_box .top_box .title {margin-bottom: 20px; color:  #fff; font-weight: 900; }
 main .container_report .contents .report_left .left_box .top_box .img {width: 100%;}
-main .container_report .contents .report_left .left_box .info_report {}
+main .container_report .contents .report_left .left_box .info_report {
+    font-size: 0.94rem; font-weight: 500; line-height: 1.5;
+    font-family: 'Pretendard'; height:60px;
+}
 main .container_report .contents .report_left .left_box .btn_report {
     display: inline-block;
     margin-bottom: 0; width: 115px; line-height: 35px;
     color: #222; background-color: #fff;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px; font-weight: 900;
+    font-family: 'Pretendard';
 }
 main .container_report .contents .report_left .left_box .btn_report:hover {
     background-color: #222; color: #fff;
@@ -313,54 +347,60 @@ main .container_report .contents .report_right p {
     color: #fff;
 }
 main .container_report .contents .report_right .cam_title {
-    margin-bottom: 35px;
+    margin-bottom: 35px; font-size: 2.50rem; font-weight: 900;
 }
-main .container_report .contents .report_right .cam_info {}
+main .container_report .contents .report_right .cam_info {
+    font-size: 1.13rem; font-weight: 500; font-family: 'Pretendard';
+}
 /* ================================================ 4. 제품 소개 */
+/* 어렵따 */
 main .container_items {
-    height: 300vh;
+    /* height: 500vh;  */z-index: 999;
+    background: url(../images/natural_beauty2.png) no-repeat;
+    background-attachment: fixed;
+    /* position: sticky; top: 100px;  */
+    background-position-x: 100px;
+    background-position-y: 135px; 
 }
 main .container_items .contents_bg {
-    background: url(../images/natural_beauty2.png) no-repeat;
-    position: sticky; top: 20px; height: 65vh;
-    background-position-x: 100px;
-    background-position-y: -35px; 
 }
 main .container_items .contents {
-    z-index: 999; position: sticky;
-    top: 10vh;
+    z-index: 998; /* position: sticky; */
     /* width: 80%; height: 80%; */
 }
 main .container_items .contents .top_info_box {
     display: flex; flex-flow: row nowrap; justify-content: flex-start;
     margin-bottom: 60px;
+    position: sticky; top: 153px;
 }
 main .container_items .contents .top_info_box .left_box {
     margin-right: 200px;
 }
 main .container_items .contents .top_info_box .left_box .brand {
-    margin-bottom: 25px;
-    font-size: 37px; font-weight: 800;
+    margin-bottom: 25px; font-family: 'Pretendard';
+    font-size: 2.06rem; font-weight: 800;
 }
 main .container_items .contents .top_info_box .left_box .brand_info {
-    font-size: 19px; line-height: 1.5; 
+    line-height: 1.5; font-size: 1.19rem; font-family: 'Pretendard';
 }
 main .container_items .contents .top_info_box .title_box {
     overflow: hidden;
 }
 main .container_items .contents .top_info_box .title_box .title {
-    font-size: 37px; font-weight: 800;
+    font-size: 2.50rem; font-weight: 900;
 }
 /* a - 더 자세히 보기 */
 main .container_items .contents .top_info_box .title_box .btn_product {
     border-radius: 30px; border: 1.4px solid #222;
     padding: 10px 17px; display: inline-block;
-    float: right; margin-top: 20px;
+    margin-top: 20px; font-weight: 500; font-family: 'Pretendard';
+
 }
 /* 움직이는 컨텐츠 */
 /* 공통 */
 main .container_items .contents .move_contents {
-    /* background-color: lightgreen; */
+    /* background-color: lightgreen;  */
+    width: 100%; height: 150vh;
     position: relative;
     display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;
     /* height: 100vh; */
@@ -368,8 +408,8 @@ main .container_items .contents .move_contents {
 }
 /* ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆ 글자 */
 main .container_items .contents .move_contents .main_title {
-    position: absolute; left: 50%; top:0%; transform: translateX(-50%);
-    font-size: 230px; font-weight: 900;
+    position: absolute; left: 50%; top:20%; transform: translateX(-50%);
+    font-size: 14.38rem; font-weight: 900;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #000; z-index: 999;
     -webkit-background-clip: text !important; 
@@ -381,37 +421,43 @@ main .container_items .contents .move_contents .main_title {
     transition: background-position 2.5s ease-out;
 }
 main .container_items .contents .move_contents .img_left_box {
+    height: 100vh; width: 1200px;
 }
 main .container_items .contents .move_contents .img_left_box > * {
     width: 259px; height: 259px;
     border-radius: 50%; overflow: hidden;
 }
 main .container_items .contents .move_contents .img_left_box .left1 {
-    position: absolute; bottom: 0; left: 50px;
-    opacity: 0;
+    position: absolute; top:300px; margin-left: 20px; 
 } 
 main .container_items .contents .move_contents .img_left_box .left1 img {width: 100%;}
 main .container_items .contents .move_contents .img_left_box .left2 {
-    position: absolute; /* bottom: 163px; left: 331px; */
-    opacity: 0; top: -100px; left: 331px;
+    position: absolute; top: 310px; left: 312px;
 }
 main .container_items .contents .move_contents .img_left_box .left2 img {width: 100%;}
 main .container_items .contents .move_contents .img_right {
-    width: 533px; height: 533px;
+    width: 603px; height: 603px;
     border-radius: 50%; overflow: hidden;
-    position: relative; top: 100px;
-    opacity: 0;
+    position: absolute; top: 500px; right: 10px;
+    /* opacity: 0; */
 }
 main .container_items .contents .move_contents .img_right img {width: 100%; }
 /* bath */
 main .container_items .contents .move1 {}
-main .container_items .contents .move2 {opacity: 0;}
+main .container_items .contents .move2 {opacity: 0;
+    
+}
 /* shower */
-main .container_items .contents .move3 {opacity: 0;}
+main .container_items .contents .move3 {
+    opacity: 0;
+    
+}
 /* body */
 /* ================================================5. 서비스 소개 */
+
 main .container_service {
     padding: 80px 0 170px;
+    overflow: hidden;
 }
 main .container_service .contents {}
 main .container_service .contents .title_box {
@@ -420,17 +466,17 @@ main .container_service .contents .title_box {
 }
 main .container_service .contents .title_box .title_service {
     float: left;
-    font-size: 55px; font-weight: 900;
+    font-size: 3.44rem; font-weight: 900;
 }
 main .container_service .contents .title_box .title_sub {
     float: right;
 }
 main .container_service .contents .title_box .title_sub .sub_title {
-    font-size: 33px; font-weight: 800;
+    font-size: 2.38rem; font-weight: 900; font-family: 'Pretendard';
     margin-bottom: 10px;
 }
 main .container_service .contents .title_box .title_sub .info {
-    font-size: 19px;
+    font-size: 1.19rem; font-weight: 500; font-family: 'Pretendard';
 }
 /* 아래 컨텐츠 */
 main .container_service .contents .bottom_contents {
@@ -462,10 +508,10 @@ main .container_service .contents .bottom_contents a:hover::after {
 }
 main .container_service .contents .bottom_contents a .title {
     margin-bottom: 10px;
-    font-size: 25px; font-weight: 700;
+    font-size: 1.56rem; font-weight: 700; font-family: 'Pretendard';
 }
 main .container_service .contents .bottom_contents a .info {
-    font-size: 18px;
+    font-size: 1.13rem; font-weight: 600; font-family: 'Pretendard';
 }
 main .container_service .contents .bottom_contents .spa {
     background: url(../images/spa1.jpg) no-repeat;
@@ -508,10 +554,10 @@ main .container_survey .contents .top_box {
     margin-bottom: 70px;
 }
 main .container_survey .contents .top_box .title {
-    margin-bottom: 40px;
+    margin-bottom: 40px; font-weight: 500;
 }
 main .container_survey .contents .top_box .main_title {
-    font-size: 38px; font-weight: 900;
+    font-size: 2.38rem; font-weight: 900;
 }
 main .container_survey .contents .survey {
     display: flex; align-items: center; justify-content: center;
@@ -519,7 +565,7 @@ main .container_survey .contents .survey {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     width: 161px; line-height: 50px;
-    transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear; font-weight: 700;
 }
 main .container_survey .contents .survey:hover {
     background-color: #222; border: #222;
@@ -557,15 +603,17 @@ footer .contents .top_contents .left_info .text_box:last-child {
 }
 footer .contents .top_contents .left_info .text_box .title {
     margin-bottom: 11px;
-    font-weight: 700;
+    font-size: 1.00rem; font-weight: 700; font-family: 'Pretendard';
 }
-footer .contents .top_contents .left_info .left_b_box .text_box .info {}
+footer .contents .top_contents .left_info .text_box .info {
+    font-size: 0.88rem; font-weight: 400; font-family: 'Pretendard';
+}
 /* 개별 */
 footer .contents .top_contents .left_info .left_b_box .text_box .info {}
 footer .contents .top_contents .left_info .left_b_box .text_box .info .talk_btn {
     border: 1px solid #fff;
     border-radius: 20px;
-    font-size: 10px;
+    font-size: 0.63rem; font-weight: 400;
     padding: 3px; 
 }
 footer .contents .top_contents .left_info .left_b_box .text_box .info .talk_btn img {width: 9px; height: 9px;}
@@ -602,7 +650,8 @@ footer .contents .top_contents .right_info .politics {
     text-align: right;
 }
 footer .contents .top_contents .right_info .politics > a {
-    margin-bottom: 20px; font-weight: 700;
+    margin-bottom: 20px; font-size: 1.00rem; font-weight: 700;
+    font-family: 'Pretendard';
 }
 footer .contents .top_contents .right_info .politics > a:last-child {
     margin-bottom: 0;
@@ -614,7 +663,8 @@ footer .contents .bottom_images {
 }
 footer .contents .bottom_images img {}
 footer .contents > p {
-    font-weight: 900;
+    font-size: 1.00rem; font-weight: 600;
+
 }
 
 

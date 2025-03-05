@@ -92,19 +92,19 @@ function up() {
 function up0() {
     // 나열 - 1
     leftTop[0].style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
-    leftTop[0].style.transform = 'translateY(100px)';
+    leftTop[0].style.transform = 'translateY(10px)';
     leftTop[0].style.opacity = '0';
     // 나열 - 2
-    leftBottom[0].style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
-    leftBottom[0].style.transform = 'translateY(140px)';
+    leftBottom[0].style.transition = 'transform 0.68s ease-in-out, opacity 0.8s ease-in-out';
+    leftBottom[0].style.transform = 'translateY(200px)';
     leftBottom[0].style.opacity = '0';
     // 나열 - 3
-    rightTop[0].style.transition = 'transform 0.88s ease-in-out, opacity 0.88s ease-in-out';
-    rightTop[0].style.transform = 'translateY(200px)';
+    rightTop[0].style.transition = 'transform 0.7s ease-in-out, opacity 0.88s ease-in-out';
+    rightTop[0].style.transform = 'translateY(80px)';
     rightTop[0].style.opacity = '0';
     // 나열 - 4
     rightBottom[0].style.transition = 'transform 0.8s ease-in-out, opacity 0.6s ease-in-out';
-    rightBottom[0].style.transform = 'translateY(140px)';
+    rightBottom[0].style.transform = 'translateY(100px)';
     rightBottom[0].style.opacity = '0';
     // 함수
     setTimeout(() => {
@@ -124,7 +124,7 @@ function up0() {
 function up2() {
     // 나열 - 1
     leftTop[2].style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
-    leftTop[2].style.transform = 'translateY(100px)';
+    leftTop[2].style.transform = 'translateY(10px)';
     leftTop[2].style.opacity = '0';
     // 나열 - 2
     leftBottom[2].style.transition = 'transform 0.7s ease-in-out, opacity 0.8s ease-in-out';
@@ -224,7 +224,6 @@ gsap.to('.contents .bottom_ani_box',{
     // y:200
 })
 
-
 // 아이템 왼쪽 
 gsap.from('.left_top, .left_bottom',{
     scrollTrigger:{
@@ -252,7 +251,7 @@ gsap.from('.right_top, .right_bottom',{
     y:200,
 })
 
-
+//===========================================================제품 소개
 gsap.to('.move_contents .main_title',{
     scrollTrigger:{
         trigger:'.move_contents .main_title',
@@ -261,79 +260,108 @@ gsap.to('.move_contents .main_title',{
         // markers:true,
         toggleActions:'play reverse restart reverse',
         scrub:true,
+        onEnter: () => {
+            gsap.to('.move_contents .main_title',{
+                opacity: 1,
+                y: 50,
+                duration: 1,
+                stagger: 0.2, // ★ 순차적으로 등장 ★
+            });
+        },
+        onLeaveBack: () => {
+            gsap.to('.move_contents .main_title', {
+                opacity: 0,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1, // ★ 사라질 때도 순차적으로 ★
+            });
+        },
     },
     opacity:1,
-    y:200,
+    // y:200,
 })
+
 
 gsap.to('.img_left_box .left1',{
     scrollTrigger:{
         trigger:'.img_left_box .left1',
-        start:'top 80%',
-        end:'top 20%',
+        start:'top 30%',
+        end:'top 10%',
         // markers:true,
-        toggleActions:'play reverse restart reverse',
+        toggleActions:'play reverse restart none',
         scrub:true,
     },
-    opacity:1,
-    y:-200,
-})
-gsap.to('.img_left_box .left2',{
-    scrollTrigger:{
-        trigger:'.img_left_box .left2',
-        start:'top 80%',
-        end:'top 20%',
-        // markers:true,
-        toggleActions:'play reverse restart reverse',
-        scrub:true,
-    },
-    opacity:1,
-    y:300,
-})
-gsap.to('.move_contents .img_right',{
-    scrollTrigger:{
-        trigger:'.move_contents .img_right',
-        start:'top 80%',
-        end:'top 20%',
-        // markers:true,
-        toggleActions:'play reverse restart reverse',
-        scrub:true,
-    },
-    opacity:1,
-    y:-200,
+    // duration: 3,
+    y:50,
 })
 
 
+gsap.utils.toArray(".img_left_box .left2").forEach((img) => {
+    gsap.to(img,{
+        scrollTrigger:{
+            trigger:img,
+            start:'top 80%',
+            end:'top 20%',
+            // markers:true,
+            toggleActions:'play reverse restart reverse',
+            scrub:true,
+        },
+        y:-30,
+    })
+})
 
-    let contents = gsap.utils.toArray(".move_contents");
+gsap.utils.toArray(".move_contents .img_right").forEach((img) => {
+    gsap.to(img, {
+        scrollTrigger:{
+            trigger:img,
+            start:'top 80%',
+            end:'top 20%',
+            // markers:true,
+            toggleActions:'play reverse restart reverse',
+            scrub:true,
+        },
+        y:-400,
+    })
+})
 
-    contents.forEach((move_contents, index) => {
-    gsap.to(move_contents, {
-        opacity: 1,
-        // duration: 1,
+
+
+//========================== 챗 gbt
+let contents = gsap.utils.toArray(".move_contents");
+
+contents.forEach((move_contents, index) => {
+    let tl = gsap.timeline({
         scrollTrigger: {
-        trigger: ".wrapper",
-          start: `${index * 100}% center`,
-          end: `${(index + 1) * 100}% center`,
-        scrub: 1,
-        toggleActions: "play none none reverse"
+            trigger: move_contents,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+            pin: true, // 섹션을 고정하여 다음 요소가 자연스럽게 등장하도록 설정
+            anticipatePin: 1
         }
     });
-    });
 
+    // 현재 섹션 등장 효과
+    tl.fromTo(move_contents, { opacity: 0 }, { opacity: 1, duration: 2 });
 
-gsap.to(".move_contents .main_title", {
-    // opacity: 1, // 투명도 변경
-    backgroundPosition: "left", // 배경 이동 (글자 색 채우기)
-    // duration: 1.5, // 애니메이션 지속 시간
-    scrollTrigger: {
-        trigger: ".move_contents .main_title",
-        start: "top 50%", // 화면의 80% 지점에서 시작
-        end: "top 30%", // 50%까지 진행
-        // markers:true,
-        scrub: 1, // 부드러운 스크롤 연동
+    // 다음 섹션 등장 시 현재 섹션을 서서히 사라지게
+    if (index < contents.length - 1) {
+        tl.to(move_contents, { opacity: 0, duration: 1 }, "+=0.9");
     }
+});
+
+
+gsap.utils.toArray(".move_contents .main_title").forEach((title) => {
+    gsap.to(title, {
+        backgroundPosition: "left", // 배경 이동 (글자 색 채우기)
+        scrollTrigger: {
+            trigger: title, // 각 개별 `.main_title` 요소를 트리거
+            start: "top 50%", // 화면의 50% 지점에서 시작
+            end: "top 30%", // 30%까지 진행
+            scrub: 1, // 부드러운 스크롤 연동
+        }
     });
+});
 
 const serviceItems = document.querySelectorAll('.bottom_contents > a')
 
