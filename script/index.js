@@ -1,4 +1,4 @@
-//black 빼기
+// 브랜드 설명 텍스트 black 빼기
 document.addEventListener("DOMContentLoaded", function () {
     const categoryList = document.querySelector(".about_category");
     const listItems = document.querySelectorAll(".about_category li a");
@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-//2. about
-// 마우스 갖다 대면 dispaly:none -> block으로 바꾸기
+
+// 브랜드 설명 카테고라 텍스트에 마우스 갖다 대면 dispaly:none -> block으로 바꾸기
 const txt = document.querySelectorAll('.about_category li a');
 const aniBox1 = document.querySelector('.ani_box1');
 const aniBox2 = document.querySelector('.ani_box2');
@@ -31,7 +31,7 @@ txt[1].addEventListener('mouseover', ()=>{
     aniBox3.style.display = 'none';
     aniBox4.style.display = 'none';
     aniBox2.style.display = 'block';
-    up();
+    up1();
 })
 txt[2].addEventListener('mouseover', ()=>{
     aniBox1.style.display = 'none';
@@ -45,7 +45,7 @@ txt[3].addEventListener('mouseover', ()=>{
     aniBox2.style.display = 'none';
     aniBox3.style.display = 'none';
     aniBox4.style.display = 'block';
-    up4();
+    up3();
 })
 
 
@@ -55,39 +55,6 @@ const leftBottom = document.querySelectorAll('.left_bottom');
 const rightTop = document.querySelectorAll('.right_top');
 const rightBottom = document.querySelectorAll('.right_bottom');
 console.log(leftTop, leftBottom, rightTop, rightBottom);
-
-function up() {
-    // 나열 - 1
-    leftTop[1].style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
-    leftTop[1].style.transform = 'translateY(50px)';
-    leftTop[1].style.opacity = '0';
-    // 나열 - 2
-    leftBottom[1].style.transition = 'transform 0.7s ease-in-out, opacity 0.8s ease-in-out';
-    leftBottom[1].style.transform = 'translateY(100px)';
-    leftBottom[1].style.opacity = '0';
-    // 나열 - 3
-    rightTop[1].style.transition = 'transform 0.88s ease-in-out, opacity 0.88s ease-in-out';
-    rightTop[1].style.transform = 'translateY(200px)';
-    rightTop[1].style.opacity = '0';
-    // 나열 - 4
-    rightBottom[1].style.transition = 'transform 0.8s ease-in-out, opacity 0.6s ease-in-out';
-    rightBottom[1].style.transform = 'translateY(140px)';
-    rightBottom[1].style.opacity = '0';
-    // 함수
-    setTimeout(() => {
-        leftTop[1].style.opacity = '1';
-        leftTop[1].style.transform = 'translateY(-145px)'; 
-        // 아래로 이동
-        leftBottom[1].style.opacity = '1';
-        leftBottom[1].style.transform = 'translateY(-90px)'; 
-        // 아래로 이동
-        rightTop[1].style.opacity = '1';
-        rightTop[1].style.transform = 'translateY(-6px)'; 
-        // 아래로 이동
-        rightBottom[1].style.opacity = '1';
-        rightBottom[1].style.transform = 'translateY(-90px)'; 
-    }, 100); // 2초 후 실행 (첫 애니메이션 완료 후 실행)
-}
 
 function up0() {
     // 나열 - 1
@@ -121,6 +88,40 @@ function up0() {
         rightBottom[0].style.transform = 'translateY(-90px)'; 
     }, 100); // 2초 후 실행 (첫 애니메이션 완료 후 실행)
 }
+
+function up1() {
+    // 나열 - 1
+    leftTop[1].style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
+    leftTop[1].style.transform = 'translateY(50px)';
+    leftTop[1].style.opacity = '0';
+    // 나열 - 2
+    leftBottom[1].style.transition = 'transform 0.7s ease-in-out, opacity 0.8s ease-in-out';
+    leftBottom[1].style.transform = 'translateY(100px)';
+    leftBottom[1].style.opacity = '0';
+    // 나열 - 3
+    rightTop[1].style.transition = 'transform 0.88s ease-in-out, opacity 0.88s ease-in-out';
+    rightTop[1].style.transform = 'translateY(200px)';
+    rightTop[1].style.opacity = '0';
+    // 나열 - 4
+    rightBottom[1].style.transition = 'transform 0.8s ease-in-out, opacity 0.6s ease-in-out';
+    rightBottom[1].style.transform = 'translateY(140px)';
+    rightBottom[1].style.opacity = '0';
+    // 함수
+    setTimeout(() => {
+        leftTop[1].style.opacity = '1';
+        leftTop[1].style.transform = 'translateY(-145px)'; 
+        // 아래로 이동
+        leftBottom[1].style.opacity = '1';
+        leftBottom[1].style.transform = 'translateY(-90px)'; 
+        // 아래로 이동
+        rightTop[1].style.opacity = '1';
+        rightTop[1].style.transform = 'translateY(-6px)'; 
+        // 아래로 이동
+        rightBottom[1].style.opacity = '1';
+        rightBottom[1].style.transform = 'translateY(-90px)'; 
+    }, 100); // 2초 후 실행 (첫 애니메이션 완료 후 실행)
+}
+
 function up2() {
     // 나열 - 1
     leftTop[2].style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
@@ -154,9 +155,7 @@ function up2() {
     }, 100); // 2초 후 실행 (첫 애니메이션 완료 후 실행)
 }
 
-
-
-function up4() {
+function up3() {
     // 나열 - 1
     leftTop[3].style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
     leftTop[3].style.transform = 'translateY(50px)';
@@ -191,13 +190,10 @@ function up4() {
 
 
 
-
-
-
-
  /* 스크롤트리거 */
 gsap.registerPlugin(ScrollTrigger);
 
+// 브랜드 설명 제목이랑 설명 투명도
 gsap.to('.top_title h2, h2+p',{
     scrollTrigger:{
         trigger:'.top_title h2',
@@ -210,6 +206,7 @@ gsap.to('.top_title h2, h2+p',{
     opacity:1,
 })
 
+// 브랜드 설명 컨텐츠 투명도
 gsap.to('.contents .bottom_ani_box',{
     scrollTrigger:{
         trigger:'.contents .bottom_ani_box',
@@ -251,35 +248,7 @@ gsap.from('.right_top, .right_bottom',{
     y:200,
 })
 
-//===========================================================제품 소개
-// gsap.to('.move_contents .main_title',{
-//     scrollTrigger:{
-//         trigger:'.move_contents .main_title',
-//         start:'top 80%',
-//         end:'top 20%',
-//         // markers:true,
-//         toggleActions:'play reverse restart reverse',
-//         scrub:true,
-//         onEnter: () => {
-//             gsap.to('.move_contents .main_title',{
-//                 opacity: 1,
-//                 y: 50,
-//                 duration: 1,
-//                 stagger: 0.2, // ★ 순차적으로 등장 ★
-//             });
-//         },
-//         onLeaveBack: () => {
-//             gsap.to('.move_contents .main_title', {
-//                 opacity: 0,
-//                 y: 0,
-//                 duration: 0.8,
-//                 stagger: 0.1, // ★ 사라질 때도 순차적으로 ★
-//             });
-//         },
-//     },
-//     opacity:1,
-// })
-
+// 브랜드 설명 타이틀 스크롤 트리거
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -298,53 +267,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-
-
-
-
-
-// gsap.to('.img_left_box .left1',{
-//     scrollTrigger:{
-//         trigger:'.img_left_box .left1',
-//         start:'top 30%',
-//         end:'top 10%',
-//         // markers:true,
-//         toggleActions:'play reverse restart none',
-//         scrub:true,
-//     },
-//     // duration: 3,
-//     y:50,
-// })
-
-
-// gsap.utils.toArray(".img_left_box .left2").forEach((img) => {
-//     gsap.to(img,{
-//         scrollTrigger:{
-//             trigger:img,
-//             start:'top 80%',
-//             end:'top 20%',
-//             // markers:true,
-//             toggleActions:'play reverse restart reverse',
-//             scrub:true,
-//         },
-//         y:-30,
-//     })
-// })
-
-// gsap.utils.toArray(".move_contents .img_right").forEach((img) => {
-//     gsap.to(img, {
-//         scrollTrigger:{
-//             trigger:img,
-//             start:'top 80%',
-//             end:'top 20%',
-//             // markers:true,
-//             toggleActions:'play reverse restart reverse',
-//             scrub:true,
-//         },
-//         y:-400,
-//     })
-// })
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -367,77 +289,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-        gsap.registerPlugin(ScrollTrigger);
-    
-        const moveContents = document.querySelectorAll(".move_contents");
-    
-        moveContents.forEach((content, index) => {
-            gsap.to(content, {
-                opacity: 0,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: content,
-                    start: "top 10%", // 🎯 초반에는 유지
-                    end: "bottom top", // 🎯 150vh 지점에서 자연스럽게 사라짐
-                    scrub: true, // 🎯 부드러운 전환
-                    onComplete: () => {
-                        // 🎯 현재 씬이 사라지는 즉시 다음 씬을 활성화
-                        if (moveContents[index + 1]) {
-                            gsap.to(moveContents[index + 1], {
-                                opacity: 1,
-                                duration: 0.3, // 빠르게 다음 씬이 등장
-                                ease: "none",
-                            });
-                        }
-                    },
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const moveContents = document.querySelectorAll(".move_contents");
+
+    moveContents.forEach((content, index) => {
+        gsap.to(content, {
+            opacity: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: content,
+                start: "top 10%", // 🎯 초반에는 유지
+                end: "bottom top", // 🎯 150vh 지점에서 자연스럽게 사라짐
+                scrub: true, // 🎯 부드러운 전환
+                onComplete: () => {
+                    // 🎯 현재 씬이 사라지는 즉시 다음 씬을 활성화
+                    if (moveContents[index + 1]) {
+                        gsap.to(moveContents[index + 1], {
+                            opacity: 1,
+                            duration: 0.3, // 빠르게 다음 씬이 등장
+                            ease: "none",
+                        });
+                    }
                 },
-            });
+            },
         });
     });
-    
-
-
-
-
-
-
-
-
-    function activateAnimation(content) {
-        const left1 = content.querySelector('.img_left_box .left1');
-        const left2 = content.querySelector('.img_left_box .left2');
-        const imgRight = content.querySelector('.move_contents .img_right');
-
-        if (left1) {
-            left1.classList.remove('hidden');
-            left1.classList.add('animate-down'); // 아래에서 위로 등장
-        }
-        if (left2) {
-            left2.classList.remove('hidden');
-            left2.classList.add('animate-up'); // 위에서 아래로 등장
-        }
-        if (imgRight) {
-            imgRight.classList.remove('hidden');
-            imgRight.classList.add('animate-down'); // 아래에서 위로 등장
-        }
-    }
-
-    // 요소 초기 숨김 상태 적용
-    moveContents.forEach((content) => {
-        content.querySelectorAll('.img_left_box .left1, .img_left_box .left2, .move_contents .img_right').forEach(el => {
-            el.classList.add('hidden');
-        });
-    });
-
-    window.addEventListener("scroll", checkScroll);
-    checkScroll(); // 초기 로딩 시 확인
 });
 
 
 
+function activateAnimation(content) {
+    const left1 = content.querySelector('.img_left_box .left1');
+    const left2 = content.querySelector('.img_left_box .left2');
+    const imgRight = content.querySelector('.move_contents .img_right');
 
-//========================== 챗 gbt
+    if (left1) {
+        left1.classList.remove('hidden');
+        left1.classList.add('animate-down'); // 아래에서 위로 등장
+    }
+    if (left2) {
+        left2.classList.remove('hidden');
+        left2.classList.add('animate-up'); // 위에서 아래로 등장
+    }
+    if (imgRight) {
+        imgRight.classList.remove('hidden');
+        imgRight.classList.add('animate-down'); // 아래에서 위로 등장
+    }
+}
+
+// 요소 초기 숨김 상태 적용
+moveContents.forEach((content) => {
+    content.querySelectorAll('.img_left_box .left1, .img_left_box .left2, .move_contents .img_right').forEach(el => {
+        el.classList.add('hidden');
+    });
+});
+
+window.addEventListener("scroll", checkScroll);
+checkScroll(); // 초기 로딩 시 확인
+});
+
+//============================== 제품 소개 컨텐츠 서서히 사라지게 하기
 let contents = gsap.utils.toArray(".move_contents");
 
 contents.forEach((move_contents, index) => {
@@ -461,7 +374,7 @@ contents.forEach((move_contents, index) => {
     }
 });
 
-
+// 제품 설명 컨텐츠 글자 색 채우기
 gsap.utils.toArray(".move_contents .main_title").forEach((title) => {
     gsap.to(title, {
         backgroundPosition: "left", // 배경 이동 (글자 색 채우기)
@@ -474,6 +387,7 @@ gsap.utils.toArray(".move_contents .main_title").forEach((title) => {
     });
 });
 
+//======================================================= 제품 서비스 소개 서서히 등장하기
 const serviceItems = document.querySelectorAll('.bottom_contents > a')
 
 gsap.to(serviceItems,{
