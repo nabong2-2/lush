@@ -248,7 +248,7 @@ gsap.from('.right_top, .right_bottom',{
     y:200,
 })
 
-// 브랜드 설명 타이틀 스크롤 트리거
+// 스크롤 위치에 따라 자연스럽게 애니메이션 처리
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
